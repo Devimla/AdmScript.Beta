@@ -33,7 +33,7 @@ yum -y update
 yum -y install git
 git clone https://github.com/Devimla/AdmScript.Beta.git
 clear
-cd AdmScript
+cd Admscript.Beta
 rm -rf README.md
 rm -rf install
 for arqs in `ls`
@@ -47,11 +47,11 @@ sleep 4
 echo -e "\033[1;36mInstalação concluída com êxito, mande o comando adm para ter as opções.Só funciona com usuário root ou usuário com privilégios root.\033[0m"
 else
 apt-get install wget sudo
-apt-get update
+apt-get update -y
 apt-get install -y git
 git clone https://github.com/Devimla/AdmScript.Beta.git
 clear
-cd AdmScript
+cd AdmScript.Beta
 rm -rf README.md
 rm -rf install
 for arqs in `ls`
@@ -64,5 +64,5 @@ echo -e "\033[1;36mInstalação concluída com êxito, mande o comando adm para 
 fi
 cd
 rm -rf install 2> /dev/null
-rm -rf AdmScript 2> /dev/null
+rm -rf AdmScript.Beta 2> /dev/null
 rm install
