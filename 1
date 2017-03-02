@@ -1,0 +1,51 @@
+echo " "
+echo -e "\033[1;36m        .......:::::::Adm Script, created by Devim:::::::......\033[0m"
+echo -e "\033[1;37mPara executar um comando escolha uma das opçoẽs abaixo ou pode pode mandar o nome número da opção sem uso do comando adm.\033[0m"  
+
+echo -e "\033[1;31mPara sair precione Ctrl + C\033
+ \033[1;36m1 | CPU
+  \033[0;37m|Detalhes sobre a CPU desse servidor. 
+\033[1;36m2 | HD
+  \033[0;37m|Detalhes sobre o HD desse servidor. 
+\033[1;36m3 | Consumo RAM
+  \033[0;37m|Processos que mais consomem memória RAM nesse servidor. 
+\033[1;36m4 | Geral
+  \033[0;37m|Todas as informações básicas gerais desse servidor. 
+\033[1;36m5 | Atualizar-OS
+  \033[0;37m|Atualizar sistema operacional, \033[1;31mSE TIVER NOVA VERSÃO DISPONÍVEL.
+\033[1;36m6 | Velocidade
+  \033[0;37m|Teste de velocidade desse servidor.
+\033[1;36m7| Atualizar
+  \033[0;37m|Atualizar lista de pacotes e todos os pacotes instalados para versão mais recente.
+\033[1;36m8| Segurança UP
+  \033[0;37m|Instala atualizações de segurança em sistemas Ubuntu e Debian.
+\033[1;36m9| Remover
+  \033[0;37m|Remover pacotes antigos que não são mais usados e liberar espaço em disco.
+\033[1;36m10| Voltar
+  \033[0;37m|Voltar para o menu anterior.\033[0m"
+read -p "Opção:" opcao
+
+case $opcao in
+ 11)
+  1;;
+ 2) 
+  2;;
+ 3)
+  3;;
+ 4)
+  4;;
+ 5)
+  5;;
+ 6)
+  6;;
+ 7)
+  7;;
+ 8)
+  8;;
+ 9)
+  9;;
+ 10)
+  adm;;
+  *)
+  id > /dev/null 2> /dev/null
+esac

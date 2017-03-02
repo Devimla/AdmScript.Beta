@@ -1,0 +1,60 @@
+echo " "
+echo -e "\033[1;37mPara executar um comando escolha uma das opçoẽs abaixo ou pode pode mandar o nome número da opção sem uso do comando adm.\033[0m"  
+
+echo -e "\033[1;31mPara sair precione Ctrl + C\033
+\033[1;36m1 | Limpar
+  \033[0;37m|Limpar cache e swap do servidor.
+ \033[1;36m2 | Squid3
+  \033[0;37m|Instalar e configurar o Squid3 no servidor. 
+\033[1;36m3 | VpsPack
+  \033[0;37m|Instalar o VpsPack, criado por Luiz. 
+\033[1;36m4 | CONFVPS
+  \033[0;37m|Instalar o CONFVS, criado por Glemysson.
+\033[1;36m5 | PackSSH
+  \033[0;37m|Instalar o PackSSH, criado por Mr.SSH.
+\033[1;36m6 | Password
+  \033[0;37m|Alterar senha root do servidor. 
+\033[1;36m7 | Atualizar-OS
+  \033[0;37m|Atualizar sistema operacional, \033[1;31mSE TIVER NOVA VERSÃO DISPONÍVEL.
+\033[1;36m8 | Velocidade
+  \033[0;37m|Teste de velocidade desse servidor.
+\033[1;36m9 | Atualizar
+  \033[0;37m|Atualizar lista de pacotes e todos os pacotes instalados para versão mais recentes.
+\033[1;36m10| Segurança UP
+  \033[0;37m|Instala atualizações de segurança em sistemas Ubuntu e Debian.
+\033[1;36m11| Remover
+  \033[0;37m|Remover pacotes antigos que não são mais usados e liberar espaço em disco.
+\033[1;36m12| Hostname
+  \033[1;37m|Hostname atual desse servidor.
+\033[1;36m13| Alterar Hostname
+  \033[1;37m|Alterar Hostname atual desse servidor.
+\033[1;36m14| Configurar
+  \033[1;37m| Configurar o servidor, excelente opção para servidores novos.
+\033[1;36m15| Voltar
+  \033[0;37m|Voltar para o menu anterior.\033[0m"
+read -p "Opção:" opcao
+
+case $opcao in
+ 1)
+  201;;
+ 2) 
+  2;;
+ 3)
+  3;;
+ 4)
+  4;;
+ 5)
+  5;;
+ 6)
+  6;;
+ 7)
+  7;;
+ 8)
+  8;;
+ 9)
+  9;;
+ 10)
+  adm;;
+  *)
+  id > /dev/null 2> /dev/null
+esac
