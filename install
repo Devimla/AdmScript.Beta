@@ -31,7 +31,7 @@ apt-get update
 apt-get install wget sudo
 yum -y update
 yum -y install git
-git clone https://github.com/Devimla/AdmScript.git
+git clone https://github.com/Devimla/AdmScript.Beta.git
 clear
 cd AdmScript
 rm -rf README.md
@@ -49,7 +49,7 @@ else
 apt-get install wget sudo
 apt-get update
 apt-get install -y git
-git clone https://github.com/Devimla/AdmScript.git
+git clone https://github.com/Devimla/AdmScript.Beta.git
 clear
 cd AdmScript
 rm -rf README.md
