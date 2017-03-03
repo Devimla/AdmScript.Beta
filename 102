@@ -1,8 +1,0 @@
-#!/bin/bash
-
-clear 
-echo -e "\033[1;35mAguarde, coletando informações.....\033[0m"
-sleep 3
-df -h
-sleep 2
-1
