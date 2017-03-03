@@ -72,12 +72,12 @@ done
 sleep 2
 clear
 echo -e "\033[0m \033[1;36m AdmScript instalado com sucesso.\033[0m"
-echo -n -e "\033[1;36m É recomendável ler o tutorial de como usar o script para ter um maior proveito, deseja ler? (S,n):\033[0m"
+echo -n -e "\033[1;35m É recomendável ler o tutorial de como usar o script para ter um maior proveito, deseja ler? (S/n):\033[0m"
 read resp
 if [ "$resp" == "S" ]; then
-    4
+    000
 elif [ "$resp" == "n" ]; then
-    echo ""
+    clear
     echo -e "\033[1;36mPara ver as opções disponíveis mande o comando \033[1;31madm\033[0m"
     sleep 3
     adm
