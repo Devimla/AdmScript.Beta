@@ -1,9 +1,0 @@
-#!/bin/bash
-
-clear
-echo -e "\033[1;36mAguarde, coletando informações....\033[0m"
-sleep 3
-clear
-cat /proc/cpuinfo
-sleep 2
-1
