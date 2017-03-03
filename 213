@@ -1,0 +1,76 @@
+#!/bin/bash
+
+clear
+echo -e "\033[1;36m Isso irá configurar totalmente o seu servidor, o squid será instalado e configurado, poderá escolher entre dois script gerenciador, VpsPack ou CONFVPS, e será instalado também o BadVPN.\033[1;31m Para continuar pressione ENTER para cancelar pressione CTRL + C.\033[0m"
+read #enter
+echo -e "\033[1;36m Escolha um dos script abaixo, ambos servem para criar, deletar, usuários e etc.\033[0m" 
+echo -n -e "\033[1;35m Escolha qual Script deseja instalar, 1 VpsPack,  2 PackSSH e 3 CONFVPS:\033[0m"
+
+read resp
+if [ "$resp" == "1" ]; then
+      echo -e "\033[1;36m             Iniciando instalação do VpsPack.\033[0m"
+     sleep 5 
+     rm install
+     rm install.1
+     clear
+      apt-get update -y
+      apt-get install wget sudo -y
+      wget https://raw.githubusercontent.com/RicKbrL/VpsPack/master/install && bash install
+      sleep 5
+      clear
+if [ "$resp" == "2" ]; then
+      echo -e "\033[1;36m             Iniciando instalação do PackSSH.\033[0m"
+     sleep 5 
+     rm install
+     rm install.1
+     clear
+      apt-get update -y
+      apt-get install wget sudo -y
+      wget https://raw.githubusercontent.com/JorisBRA/jorisBra/master/InstallerPackSSH && bash InstallerPackSSH
+      00000000000
+      clear
+      echo -e "\033[1;36m Para ter as opções utilize o comando \033[1;31mPackSSH.\033[0m"
+      sleep 5
+elif [ "$resp" == "3" ]; then
+     echo -e "\033[1;36m             Iniciando instalação do CONFVPS.\033[0m"
+      sleep 2
+      rm install
+      rm install.1
+      clear
+      apt-get update -y
+      apt-get install wget sudo -y
+      wget https://raw.githubusercontent.com/glemysson-Hacker/GlEmYsSoN/master/installer.sh
+      chmod +x installer.sh
+      bash installer.sh
+      sleep 5
+      clear
+fi
+echo -e "\033[1;36mBad UDP é um programa que libera portas UDP no servidor e assim permitindo serviço VOIP como ligação no WhatsApp, e jogos online.\033[0m"
+echo " "
+echo -e "\033[1;31mInstalando, aguarde....\033[0m"
+sleep 2
+wget https://raw.githubusercontent.com/RicKbrL/badvpn/master/easyinstall && bash easyinstall
+clear
+echo -e "\033[1;36mInstalação do BadVPN Concluída :).\033[0m"
+echo -e ""
+echo -n -e "\033[1;31m Deseja iniciar o BadVPN?(S/n):\033[0m"
+read resp
+if [ "$resp" == "S" ]; then
+       sleep 1
+       badvpn start
+       sleep 2
+       echo -e "\033[1;36m             BadVPN iniciado :).\033[0m"
+elif [ "$resp" == "n" ]; then
+    echo -e "\033[1;37m          Quando quiser iniciar o BadVPN utilize o comando 201.\033[0m"
+fi
+sleep 2 
+clear
+echo -e "\033[1;36m             Instalando e configurando o Squid.\033[0m"
+sleep 5
+wget https://raw.githubusercontent.com/Devimla/Squid/master/conf && bash conf
+rm conf
+clear
+echo -e "\033[1;31m CONFIGURAÇÃO DO SERVIDOR CONCLUÍDA.\033[0m"
+echo -e "\033[1;36m Obrigado por escolher o AdmScript.\033[0m" 
+sleep 2
+2

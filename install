@@ -20,11 +20,11 @@ else
         fi
 fi
 
-echo -e "\033[1;36mSe prosseguir será instalado o Adm Script, script baseado no VpsPack.\033[1;31m Para prosseguir aperte ENTER, para cancelar CTRL + C.\033[0m"
+echo -e "\033[1;36mSe prosseguir será instalado o Adm Script, script simples com opções simples baseado no VpsPack.\033[1;31m Para prosseguir aperte ENTER, para cancelar CTRL + C.\033[0m"
 read  #enter
 clear
 echo -e "\033[1;36m Iniciando instalação, aguarde.\033[0m"
-sleep 6
+sleep 5
 if yum -y update
 then
 apt-get update
@@ -42,9 +42,18 @@ rm /bin/$arqs 2>/dev/null
 mv $arqs /bin
 chmod +x /bin/$arqs
 done
+sleep 2
 clear
-sleep 4
-echo -e "\033[1;36mInstalação concluída com êxito, mande o comando adm para ter as opções.Só funciona com usuário root ou usuário com privilégios root.\033[0m"
+echo -e "\033[0m \033[1;36m AdmScript instalado com sucesso.\033[0m"
+echo -n -e "\033[1;36m É recomendável ler o tutorial de como usar o script para ter um maior proveito, deseja ler? (S,n):\033[0m"
+read resp
+if [ "$resp" == "S" ]; then
+    000
+elif [ "$resp" == "n" ]; then
+    echo -e "\033[1;36mPara ver as opções disponíveis mande o comando \033[1;31madm\033[0m"
+    sleep 3
+    adm
+fi
 else
 apt-get install wget sudo
 apt-get update -y
@@ -60,7 +69,20 @@ rm /bin/$arqs 2>/dev/null
 mv $arqs /bin
 chmod +x /bin/$arqs
 done
-echo -e "\033[1;36mInstalação concluída com êxito, mande o comando adm para ter as opções.Só funciona com usuário root ou usuário com privilégios root.\033[0m"
+sleep 2
+clear
+echo -e "\033[0m \033[1;36m AdmScript instalado com sucesso.\033[0m"
+echo -n -e "\033[1;36m É recomendável ler o tutorial de como usar o script para ter um maior proveito, deseja ler? (S,n):\033[0m"
+read resp
+if [ "$resp" == "S" ]; then
+    4
+elif [ "$resp" == "n" ]; then
+    echo ""
+    echo -e "\033[1;36mPara ver as opções disponíveis mande o comando \033[1;31madm\033[0m"
+    sleep 3
+    adm
+fi
+else
 fi
 cd
 rm -rf install 2> /dev/null
