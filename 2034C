@@ -1,0 +1,34 @@
+#!/bin/bash
+
+clear
+echo -e "\033[1;36mBad UDP é um programa que libera portas UDP no servidor e assim permitindo serviço VOIP como ligação no WhatsApp, e jogos online.\033[0m"
+sleep 5
+echo " "
+echo -e "\033[1;31mInstalando, aguarde....\033[0m"
+sleep 2
+clear
+wget https://raw.githubusercontent.com/RicKbrL/badvpn/master/easyinstall && bash easyinstall
+clear
+echo -e "\033[1;36mInstalação do BadVPN Concluída :).\033[0m"
+echo -e ""
+echo -n -e "\033[1;31m Deseja iniciar o BadVPN?(S/n):\033[0m"
+read resp
+if [ "$resp" == "S" ]; then
+       sleep 1
+       badvpn start
+       sleep 2
+       echo -e "\033[1;36m             BadVPN iniciado :).\033[0m"
+elif [ "$resp" == "n" ]; then
+    echo -e "\033[1;37m          Quando quiser iniciar o BadVPN utilize o comando 201.\033[0m"
+fi
+sleep 2
+rm conf
+clear
+echo -e "\033[1;36m             Instalando e configurando o Squid.\033[0m"
+sleep 2
+wget https://raw.githubusercontent.com/Devimla/Squid/master/conf && bash conf
+sleep 6
+echo -e "\033[1;31m CONFIGURAÇÃO DO SERVIDOR CONCLUÍDA.\033[0m"
+echo -e "\033[1;36m Obrigado por escolher o AdmScript.\033[0m" 
+sleep 5
+2

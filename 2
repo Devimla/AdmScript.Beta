@@ -11,12 +11,12 @@ echo -e "\033[1;31mPara sair precione Ctrl + C\033
   \033[0;37m|Instalar e configurar o Squid3 no servidor. 
 \033[1;36m3 | Gerenciadores
   \033[0;37m|Instale o VpsPack, CONFVPS ou PackSSH facilmente.
-\33[1;36m4 | Bad UDP
+\033[1;36m4 | Bad UDP
   \033[0;37m|Instalar o Bad UDP, programa que libera portas UDP no servidor, permitindo serviço VOIP como ligação no WhatsApp e jogos online. 
 \033[1;36m5 | Password
   \033[0;37m|Alterar senha root do servidor. 
 \033[1;36m6 | Atualizar-OS
-  \033[0;37m|Atualizar sistema operacional, \033[1;31mSE TIVER NOVA VERSÃO DISPONÍVEL.
+  \033[0;37m|Atualizar sistema operacional, \033[1;31mse tiver nova versão disponível.
 \033[1;36m7 | Velocidade
   \033[0;37m|Teste de velocidade desse servidor.
 \033[1;36m8 | Atualizar
@@ -26,14 +26,16 @@ echo -e "\033[1;31mPara sair precione Ctrl + C\033
 \033[1;36m10| Remover
   \033[0;37m|Remover pacotes antigos que não são mais usados e liberar espaço em disco.
 \033[1;36m11| Hostname
-  \033[1;37m|Hostname atual desse servidor.
+  \033[0;37m|Hostname atual desse servidor.
 \033[1;36m12| Alterar Hostname
-  \033[1;37m|Alterar Hostname atual desse servidor.
+  \033[0;37m|Alterar Hostname atual desse servidor.
 \033[1;36m13| Configurar
-  \033[1;37m| Configurar o servidor, excelente opção para servidores novos.
+  \033[0;37m| Configurar o servidor, excelente opção para servidores novos.
 \033[1;36m14| Reiniciar 
- \033[1;37m| Reiniciar o servidor. 
-\033[1;36m15| Voltar
+ \033[0;37m| Reiniciar o servidor.
+\033[1;36m15| + Velocidade
+ \033[0;37m| Aumentar velocidade de conexão do servidor.
+\033[1;36m16| Voltar
   \033[0;37m|Voltar para o menu anterior.\033[0m"
 read -p "Opção:" opcao
 
@@ -67,7 +69,9 @@ case $opcao in
  14)
   214;;
  15)
-  adm;;
+  215;;
+ 16)
+  2;;
   *)
   id > /dev/null 2> /dev/null
 esac
