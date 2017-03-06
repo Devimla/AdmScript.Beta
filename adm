@@ -20,7 +20,7 @@ fi
 
 clear
 echo " "
-echo -e "\033[1;36m       .....:::AdmScript, created by Devim:::.....\033[0m"
+echo -e "\033[1;36m       .....:::AdmScript, created by Mr.Devim:::.....\033[0m"
 echo -e "\033[1;37mPara executar um comando escolha uma das opçoẽs abaixo.\033[0m"  
 
 echo -e "\033[1;31mPara sair precione Ctrl + C\033
