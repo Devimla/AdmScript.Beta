@@ -22,11 +22,10 @@ fi
 
 if [ -f /bin/adm ]
   then
-  echo -e "\033[1;31mERRO!  \033[1;36mAdmScript já está instalado já está instalado.\033[0m"
-  echo -n -e "\033[1;31m Deseja desinstalar o AdmScript instalado atualmente ?(s/N):\033[0m"
-
-  read resp
-  if [ "$resp" == "s" ]; then
+  echo -e "\033[1;31mERRO!  \033[1;36mAdmScript já está instalado.\033[0m"
+  echo " "
+  echo -n -e "\033[1;35mPara desinstalar o AdmScript instalado atualmente pressione \033[1;31mENTER.\033[0m"
+  read #enter
    rm /bin/adm
    rm /bin/1
    rm /bin/2
@@ -64,13 +63,9 @@ if [ -f /bin/adm ]
    rm /bin/5
    clear
    echo -e "\033[1;31m               Desinstalação concluída.\033[0m"
-  elif [ "$resp" == "N" ]; then
-    clear
-    echo -e "\033[1;36m              Desinstalação cancelada.\033[0m"
-  fi
-  echo -e "\033[1;36m Preparando para reinstalar o AdmScript.\033[0m"
-  sleep 5
-  wget https://raw.githubusercontent.com/Devimla/AdmScript/master/install && bash install
+   echo -e "\033[1;36m Preparando para reinstalar o AdmScript.\033[0m"
+   sleep 5
+   wget https://raw.githubusercontent.com/Devimla/AdmScript/master/install && bash install
   true
   else
     echo -e "\033[1;36mAdmScript, script baseado no VpsPack que tem o objetivo de lhe ajudar, sem a necessidade de guardar scripts ou comandos.\033[1;31m Para prosseguir aperte ENTER, para cancelar CTRL + C.\033[0m"
