@@ -9,7 +9,7 @@ echo -e "\033[1;31mPara sair precione Ctrl + C\033
 \033[1;36m 3|Parar
  \033[0;37m |Parar o Bad UDP.
 \033[1;36m 4|Voltar
-\033[1;37m |voltar paro o menu anterior.\033[0m"
+\033[0;37m |voltar paro o menu anterior.\033[0m"
 read -p "Opção:" opcao
 
 case $opcao in
