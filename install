@@ -24,8 +24,10 @@ if [ -f /bin/adm ]
   then
   echo -e "\033[1;31mERRO!  \033[1;36mAdmScript já está instalado.\033[0m"
   echo " "
-  echo -n -e "\033[1;35mPara desinstalar o AdmScript instalado atualmente pressione \033[1;31mENTER.\033[0m"
+  echo -n -e "\033[1;35mPara desinstalar o \033[1;36mAdmScript \033[1;35minstalado atualmente pressione \033[1;31mENTER.\033[0m"
   read #enter
+   clear
+   echo -e "\033[1;31mDesinstalando...\033[0m"
    rm /bin/adm
    rm /bin/1
    rm /bin/2
@@ -68,7 +70,23 @@ if [ -f /bin/adm ]
    wget https://raw.githubusercontent.com/Devimla/AdmScript/master/install && bash install
   true
   else
-    echo -e "\033[1;36mAdmScript, script baseado no VpsPack que tem o objetivo de lhe ajudar, sem a necessidade de guardar scripts ou comandos.\033[1;31m Para prosseguir aperte ENTER, para cancelar CTRL + C.\033[0m"
+  echo -e "\033[46m Termos para instalação do AdmScript, só instale se os aceitar.\033[0m"
+  echo " "
+  echo -e "\033[1;31m1 - \033[1;36mEsse script é livre e sem fins lucrativos, e por essa razão a venda é proibida.\033[0m"
+  echo " "
+  echo -e "\033[1;31m2 - \033[1;36mEsse script  não é um gerenciador que cria, deleta, define limite, data de expiração, etc, ele é apenas um utilitário com opções para lhe ajudar no dia a dia como trocar senha do usuario atual, reiniciar e etc.\033[0m"
+  echo " "
+  echo -e "\033[1;31m3 - \033[1;36mScript feito com base no VpsPack de Rick, e também com scripts de BadGuy. Todos os direitos a eles reservados.\033[0m"
+  echo " "
+  echo -e "\033[1;31m4 - \033[1;36mO autor desse script  não se responsabiliza por uso inadequado do script, ele está em português e com cores para lhe guiar.\033[0m"
+  echo " "
+  echo -e "\033[1;31m5 - \033[1;36mScript foi feito e testado em sistemas Ubuntu 14, 15 e 16, suporte e garantia de funcionamento em outras versões não garantida.\033[0m
+  echo " "
+  echo -e "\033[1;31m6 \033[1;36mSe realizar modificações deixará os créditos ao criador Mr.Devim.\033[0m"
+  echo " "
+  echo -e "\033[1;31m7 \033[1;36mSe responsabilizará por qualquer operação(ões) e alteração(ões) que você efetuar com esse script.\033[0m"
+  echo " "
+    echo -e "\033[1;36mCaso concorde com os termos descritos acima pressione  ENTER, caso não tenha concordado \033[1;31mCTRL + C.\033[0m"
     read  #enter
     clear
     echo -e "\033[1;36m Iniciando instalação, aguarde.\033[0m"
