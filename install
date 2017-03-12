@@ -9,81 +9,60 @@ else
         if echo $(id) |grep sudo > /dev/null
         then
         clear
-        echo "Desculpem-me, mas você não é root"
+        echo "Voce não é root"
         echo "Seu usuario esta no grupo sudo"
         echo -e "Para virar root e fazer a instalação execute \033[1;31msudo su\033[0m"
         exit
         else
         clear
-        echo -e "\033[1;36mVocê não está como root, e nem tem os privilégios, para virar root mande o comando \033[1;32msu \033[1;36me em seguida a senha do usuário root\033[0m"
+        echo -e "Vc pecisa esta como root para poder fazer a instalção, Para virar root execute \033[1;31msu\033[0m e digite sua senha root"
         exit
         fi
 fi
 
-echo -e "\033[1;36mSe prosseguir será instalado o Adm Script, script simples com opções simples baseado no VpsPack.\033[1;31m Para prosseguir aperte ENTER, para cancelar CTRL + C.\033[0m"
-read  #enter
-clear
-echo -e "\033[1;36m Iniciando instalação, aguarde.\033[0m"
-sleep 5
-if yum -y update
-then
-apt-get update
-apt-get install wget sudo
-yum -y update
-yum -y install git
-git clone https://github.com/Devimla/AdmScript.Beta.git
-clear
-cd Admscript.Beta
-rm -rf README.md
-rm -rf install
-for arqs in `ls`
-do
-rm /bin/$arqs 2>/dev/null
-mv $arqs /bin
-chmod +x /bin/$arqs
-done
-sleep 2
-clear
-echo -e "\033[0m \033[1;36m AdmScript instalado com sucesso.\033[0m"
-echo -n -e "\033[1;36m É recomendável ler o tutorial de como usar o script para ter um maior proveito, deseja ler? (S,n):\033[0m"
-read resp
-if [ "$resp" == "S" ]; then
-    000
-elif [ "$resp" == "n" ]; then
-    echo -e "\033[1;36mPara ver as opções disponíveis mande o comando \033[1;31madm\033[0m"
-    sleep 3
-    adm
-fi
-else
-apt-get install wget sudo
-apt-get update -y
-apt-get install -y git
-git clone https://github.com/Devimla/AdmScript.Beta.git
-clear
-cd AdmScript.Beta
-rm -rf README.md
-rm -rf install
-for arqs in `ls`
-do
-rm /bin/$arqs 2>/dev/null
-mv $arqs /bin
-chmod +x /bin/$arqs
-done
-sleep 2
-clear
-echo -e "\033[0m \033[1;36m AdmScript instalado com sucesso.\033[0m"
-echo -n -e "\033[1;35m É recomendável ler o tutorial de como usar o script para ter um maior proveito, deseja ler? (S/n):\033[0m"
-read resp
-if [ "$resp" == "S" ]; then
-    000
-elif [ "$resp" == "n" ]; then
+if [ -f /bin/adm ]
+  then
+  echo -e "\033[1;31mERRO!  \033[1;36mAdmScript já está instalado já está instalado.\033[0m"
+  true
+  else
+    echo -e "\033[1;36mAdmScript, script baseado no VpsPack que tem o objetivo de lhe ajudar, sem a necessidade de guardar scripts ou comandos.\033[1;31m Para prosseguir aperte ENTER, para cancelar CTRL + C.\033[0m"
+    read  #enter
     clear
-    echo -e "\033[1;36mPara ver as opções disponíveis mande o comando \033[1;31madm\033[0m"
+    echo -e "\033[1;36m Iniciando instalação, aguarde.\033[0m"
     sleep 3
-    adm
+    if yum -y update
+    then
+    yum -y update
+    yum -y install git
+    git clone https://github.com/Devimla/AdmScript.git
+    clear
+    cd AdmScript
+    rm -rf README.md
+    rm -rf install
+    for arqs in `ls`
+    do
+    rm /bin/$arqs 2>/dev/null
+    mv $arqs /bin
+    chmod +x /bin/$arqs
+    done
+    echo -e "\033[1;36mConcluido, execute o comando \033[1;31madm\033[1;36m como usuário root \033[0m"
+    else
+    apt-get update
+    apt-get install -y git
+    git clone https://github.com/Devimla/AdmScript.git
+    clear
+    cd AdmScript
+    rm -rf README.md
+    rm -rf install
+    for arqs in `ls`
+    do
+    rm /bin/$arqs 2>/dev/null
+    mv $arqs /bin
+    chmod +x /bin/$arqs
+    done
+    echo -e "\033[1;36mConcluido, execute o comando \033[1;31madm\033[1;36m como usuário root \033[0m"
+    fi
+    cd
+    rm -rf install 2> /dev/null
+    rm -rf AdmScript 2> /dev/null
 fi
-fi
-cd
-rm -rf install 2> /dev/null
-rm -rf AdmScript.Beta 2> /dev/null
-rm install
