@@ -11,8 +11,8 @@ echo -e "\033[1;31mPara sair precione Ctrl + C\033
   \033[0;37m|Instalar e configurar o Squid3 no servidor. 
 \033[1;36m3 | Gerenciadores
   \033[0;37m|Instale o VpsPack, CONFVPS ou PackSSH facilmente.
-\033[1;36m4 | Bad UDP
-  \033[0;37m|Instalar o Bad UDP, programa que libera portas UDP no servidor, permitindo serviço VOIP como ligação no WhatsApp e jogos online. 
+\033[1;36m4 | BadVPN
+  \033[0;37m|Instalar o BadVPN, programa que libera portas UDP no servidor, permitindo serviço VOIP como ligação no WhatsApp e jogos online. 
 \033[1;36m5 | Password
   \033[0;37m|Alterar senha root do servidor. 
 \033[1;36m6 | Atualizar-OS
@@ -37,7 +37,11 @@ echo -e "\033[1;31mPara sair precione Ctrl + C\033
   \033[0;37m|Aumentar velocidade de conexão do servidor.
 \033[1;36m16| Deletar tudo
   \033[0;37m|Apagar todos os usuários.
-\033[1;36m17| Voltar
+\033[1;36m17| Novo usuário
+  \033[0;37m|Criar novo usuário e adicionar ao grupo sudo. \033[1;31mNão é usuário como o VpsPack ou outro gerenciador faz.
+\033[1;36m18| Add ao sudo
+  \033[0;37m|Adicionar usuário ao grupo sudo.
+\033[1;36m19| Voltar
   \033[0;37m|Voltar para o menu anterior.\033[0m"
 read -p "Opção:" opcao
 
@@ -75,6 +79,10 @@ case $opcao in
  16)
    216;;
  17)
+  217;;
+ 18)
+  218;;
+ 19)
   adm;;
   *)
   id > /dev/null 2> /dev/null
