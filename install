@@ -9,27 +9,28 @@ else
         if echo $(id) |grep sudo > /dev/null
         then
         clear
-        echo -e "\033[1;31mVocê não é root"
-        echo -e "\033[1;36mSeu usuario esta no grupo sudo"
-        echo -e "\033[1;36mPara virar root e fazer a instalação execute \033[1;31msudo su\033[0m"
+        echo "Voce não é root"
+        echo "Seu usuario esta no grupo sudo"
+        echo -e "Para virar root e fazer a instalação execute \033[1;31msudo su\033[0m"
         exit
         else
         clear
-        echo -e "\033[1;31mErro! \033[1;36mVocê pecisa estar com os direitos root para poder fazer a instalção, para virar root execute \033[1;31msu\033[0m e digite sua senha."
+        echo -e "Você pecisa esta como root para poder fazer a instalção, Para virar root execute \033[1;31msu\033[0m e digite sua senha root"
         exit
         fi
 fi
 
-echo -e "\033[1;36mAdmScript, script baseado no VpsPack que tem o objetivo de lhe ajudar, sem a necessidade de guardar scripts ou comandos.\033[1;31m Para prosseguir aperte ENTER, para cancelar CTRL + C.\033[0m"
+echo -e "\033[1;36mAdmScript, script baseado no VpsPack que tem o objetivo de lhe ajudar, sem a necessidade de guardar scripts ou comandos.\033[0m"
+echo -e "\033[1;31mPara prosseguir pressione ENTER, para cancelar CTRL + C.\033[0m"
 read  #enter
 clear
-echo -e "\033[1;31mIniciando instalação, aguarde.\033[0m"
+echo -e "\033[1;36mIniciando instalação, aguarde...\033[0m"
 sleep 3
 if yum -y update
 then
 yum -y update
 yum -y install git
-git clone https://github.com/Devimla/AdmScript.Beta.git
+git clone https://github.com/Devimla/AdmScript.git
 clear
 cd AdmScript
 rm -rf README.md
@@ -40,11 +41,11 @@ rm /bin/$arqs 2>/dev/null
 mv $arqs /bin
 chmod +x /bin/$arqs
 done
-echo -e "\033[1;36mConcluido, execute o comando \033[1;31madm\033[1;36m como usuário root \033[0m"
+echo -e "\033[1;36mConcluido, execute o comando \033[1;31madm\033[1;36m como usuário root ou usuário com permissões sudo.\033[0m"
 else
 apt-get update
 apt-get install -y git
-git clone https://github.com/Devimla/AdmScript.Beta.git
+git clone https://github.com/Devimla/AdmScript.git
 clear
 cd AdmScript
 rm -rf README.md
@@ -55,7 +56,7 @@ rm /bin/$arqs 2>/dev/null
 mv $arqs /bin
 chmod +x /bin/$arqs
 done
-echo -e "\033[1;36mConcluido, execute o comando \033[1;31madm\033[1;36m como usuário root ou com usuário do grupo sudo.\033[0m"
+echo -e "\033[1;36mConcluido, execute o comando \033[1;31madm\033[1;36m como usuário root ou usuário com permissões sudo.\033[0m"
 fi
 cd
 rm -rf install 2> /dev/null
